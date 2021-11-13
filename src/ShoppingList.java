@@ -15,12 +15,10 @@ public class ShoppingList {
 	private int numItems = 0;
 	private int cartCapacity = 0;
 
-	/** function前的註解格式建議跟內部程式的"//"區別 **/
 	/*
 	 * Create shopping list with the number of items
 	 */
 	public ShoppingList(int numItems) {
-		/** 用變數建立Items[]的長度，以便修改 **/
 		this.numItems = numItems;
 		items = new Item[numItems];
 	}
@@ -86,7 +84,6 @@ public class ShoppingList {
 	 * Bubble sort by the priority of items
 	 */
 	private void bubbleSort() {
-		/** 在for迴圈宣告i和j, 統一寫法 **/
 		for (int i = 0; i < cartCapacity - 1; i++)
 			for (int j = 0; j < cartCapacity - i - 1; j++)
 
@@ -123,7 +120,6 @@ public class ShoppingList {
 	private void removeItems(Item[] purchasedItems, int count) {
 		for (int i = 0; i < count; i++) {
 			for (int j = 0; j < cartCapacity; j++) {
-				/** 題目沒有ID，可以用unique name來比對Item，可取代ID的作用，所以刪掉ID **/
 				if (items[j].getName().equals(purchasedItems[i].getName())) {
 					items[j] = items[--cartCapacity];
 				}

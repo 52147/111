@@ -11,7 +11,6 @@
 
 public class Item implements Comparable<Item> {
 
-	/** 題目沒有ID，可以用unique name來比對Item，可取代ID的作用，所以刪掉ID **/
 	private String name;
 	private double price;
 	private int quantity;
