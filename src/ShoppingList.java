@@ -1,13 +1,9 @@
 
-/** 
- * Author : ShouTzu, Han 
- * Class : CS232 Programming with Java 
- * Project : Assignment #3 Shopping list  
- * Finished date : 25-Oct-2021 
- * Due date : 26-Oct-2021 
+/**
+ * Author : ShouTzu, Han Class : CS232 Programming with Java Project :
+ * Assignment #3 Shopping list Finished date : 25-Oct-2021 Due date :
+ * 26-Oct-2021
  */
-
-                                                                                                                
 
 public class ShoppingList {
 
@@ -41,7 +37,6 @@ public class ShoppingList {
 	 */
 	public void addItem(String name, int quantity, double price, int priority) {
 		Item item = new Item(name, quantity, price, priority);
-		/** 直接使用addItem(Item)即可 **/
 		addItem(item);
 	}
 
@@ -60,14 +55,14 @@ public class ShoppingList {
 	/*
 	 * Check if an item is already in the shopping list
 	 */
-    public boolean checkItem(String name) {
-    	for (int i = 0; i < cartCapacity; i++) {
+	public boolean checkItem(String name) {
+		for (int i = 0; i < cartCapacity; i++) {
 			if (items[i].getName().equals(name)) {
 				return true;
 			}
 		}
 		return false;
-    }
+	}
 
 	/*
 	 * Count the total price of the shopping list
@@ -89,8 +84,8 @@ public class ShoppingList {
 
 				if (items[j].compareTo(items[j + 1]) > 0) {
 					// CompareTo method: a.compareTo(b) -> a > b return 1,
-					//                                     a < b return -1,
-					//                                     a = b return 0
+					// a < b return -1,
+					// a = b return 0
 					Item temp = items[j];
 					items[j] = items[j + 1];
 					items[j + 1] = temp;
@@ -138,7 +133,8 @@ public class ShoppingList {
 		double total = 0;
 		System.out.println("    Items was purchased :");
 		System.out.println();
-		System.out.println("    " + String.format("%8s\t%5s\t%5s\t%5s\t%5s\n", "Priority", "Name", "Price", "Qty", "Total"));
+		System.out.println(
+				"    " + String.format("%8s\t%5s\t%5s\t%5s\t%5s\n", "Priority", "Name", "Price", "Qty", "Total"));
 		for (int i = 0; i < cartCapacity; i++) {
 			if (total + items[i].getTotalPrice() > budget) {
 				continue;
